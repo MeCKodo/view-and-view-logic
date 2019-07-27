@@ -2,7 +2,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 
 import './App.css';
-import { TestComp } from './component/Test';
+import { TestC } from './component/Test';
 
 type State = {
   userName: string;
@@ -32,7 +32,7 @@ class AppComp extends React.Component<{}, State> {
             Edit <code>{userName}</code> and save to reload.
           </p>
           {/* <Test name={vm.userName} /> */}
-          <TestComp name={userName} name222={userName + '211222'} />
+          <TestC name={userName} name222={userName + '211222'} />
         </header>
       </div>
     );

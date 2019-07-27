@@ -5,7 +5,7 @@ import { TestVM } from './TestVM';
 import { Props } from './types';
 
 @observer
-@withViewModel<Props>(TestVM)
+// @withViewModel(TestVM)
 class TestComp extends React.Component<Props> {
   render() {
     const { vm } = this.props;
@@ -19,6 +19,6 @@ class TestComp extends React.Component<Props> {
 }
 
 // const Test = withViewModel<Props>(TestComp, TestStore);
-// const TestC = withViewModel<Props>(TestVM);
+const TestC = withViewModel<Props>(TestComp, TestVM);
 
-export { TestComp };
+export { TestC };
