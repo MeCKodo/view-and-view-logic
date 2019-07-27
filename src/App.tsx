@@ -1,28 +1,23 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import './App.css';
-import { withViewModel } from './hoc';
-import { TestC } from './component/Test';
 
-type Props = {};
+import './App.css';
+import { TestC } from './component/Test';
 
 type State = {
   userName: string;
 };
 
 @observer
-class AppComp extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      userName: 'app component',
-    };
-  }
+class AppComp extends React.Component<{}, State> {
+  state = {
+    userName: '二哲',
+  };
 
   handleClick = () => {
     // setInterval(() => {
     this.setState({
-      userName: `DemoStore123123${Math.random().toFixed(4)}`,
+      userName: `二哲 ${Math.random().toFixed(4)}`,
     });
     // }, 50);
   };
