@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 
 import './App.css';
 import { TestC } from './component/Test';
+import { HookComponent } from './component/Hook';
 
 type State = {
   userName: string;
@@ -11,13 +12,13 @@ type State = {
 @observer
 class AppComp extends React.Component<{}, State> {
   state = {
-    userName: '二哲',
+    userName: '二哲'
   };
 
   handleClick = () => {
     // setInterval(() => {
     this.setState({
-      userName: `二哲 ${Math.random().toFixed(4)}`,
+      userName: `二哲 ${Math.random().toFixed(4)}`
     });
     // }, 50);
   };
@@ -33,6 +34,7 @@ class AppComp extends React.Component<{}, State> {
           </p>
           {/* <Test name={vm.userName} /> */}
           <TestC name={userName} name222={userName + '211222'} />
+          <HookComponent name={userName} name222={userName + '211222'} />
         </header>
       </div>
     );

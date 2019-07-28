@@ -7,14 +7,9 @@ import {
   useObserver
 } from 'mobx-react-lite';
 
-function useVM<T, P>(VM: new (...args: any[]) => T, props?: P) {
-  let source;
-  if (props) {
-    source = useAsObservableSource(props);
-  }
-  return useMemo(() => {
-    return new VM(source);
-  }, []);
+function useVM<T>(VM: new (...args: any[]) => T, props: any = {}) {
+  const source = useAsObservableSource(props);
+  return useMemo(() => new VM(source), []);
 }
 
 export {
