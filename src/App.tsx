@@ -16,11 +16,11 @@ class AppComp extends React.Component<{}, State> {
   };
 
   handleClick = () => {
-    // setInterval(() => {
-    this.setState({
-      userName: `二哲 ${Math.random().toFixed(4)}`
-    });
-    // }, 50);
+    setInterval(() => {
+      this.setState({
+        userName: `${Math.random().toFixed(4)}`
+      });
+    }, 300);
   };
 
   render() {
@@ -30,7 +30,7 @@ class AppComp extends React.Component<{}, State> {
       <div className="App">
         <header className="App-header">
           <p onClick={this.handleClick}>
-            Edit <code>{userName}</code> and save to reload.
+            点击我 <code>{userName}</code> 观察父组件传入子组件的数据
           </p>
           {/* <Test name={vm.userName} /> */}
           <TestC name={userName} name222={userName + '211222'} />

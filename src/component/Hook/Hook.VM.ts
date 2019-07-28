@@ -1,10 +1,9 @@
 import { observable, action, computed } from 'mobx';
-
+import { Props } from './types';
 class HookVM {
-  @observable userName = 'kodo1';
-  @observable props: any;
-  constructor(props: any) {
-    console.log(props, '---prps');
+  @observable userName = '二哲';
+  @observable props: Props;
+  constructor(props: Props) {
     this.props = props;
   }
 

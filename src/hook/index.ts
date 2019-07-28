@@ -9,6 +9,7 @@ import {
 
 function useVM<T>(VM: new (...args: any[]) => T, props: any = {}) {
   const source = useAsObservableSource(props);
+  // eslint-disable-next-line
   return useMemo(() => new VM(source), []);
 }
 

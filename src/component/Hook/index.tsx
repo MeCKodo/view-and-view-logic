@@ -8,7 +8,7 @@ const HookComponent = (props: Props) => {
 
   return (
     <div onClick={vm.setUserName}>
-      {vm.userName} name ={vm.name111}
+      hook 组件 组件内部数据 = {vm.userName} 父组件传入数据 = {vm.name111}
     </div>
   );
 };
